@@ -24,6 +24,7 @@ import io.opentelemetry.metrics.MeasureBatchRecorder;
 import io.opentelemetry.metrics.MeasureDouble;
 import io.opentelemetry.metrics.MeasureLong;
 import io.opentelemetry.metrics.Meter;
+import io.opentelemetry.sdk.metrics.export.MetricProducerManager;
 
 /** {@link MeterSdk} is SDK implementation of {@link Meter}. */
 public class MeterSdk implements Meter {
@@ -60,6 +61,17 @@ public class MeterSdk implements Meter {
 
   @Override
   public MeasureBatchRecorder newMeasureBatchRecorder() {
+    throw new UnsupportedOperationException("to be implemented");
+  }
+
+  /**
+   * Returns the global {@link MetricProducerManager} which can be used to register producers to
+   * export all the recorded metrics.
+   *
+   * @return the implementation of the {@code MetricProducerManager}.
+   * @since 0.1.0
+   */
+  public MetricProducerManager getMetricProducerManager() {
     throw new UnsupportedOperationException("to be implemented");
   }
 }
