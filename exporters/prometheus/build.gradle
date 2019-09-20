@@ -1,7 +1,11 @@
 description = 'OpenTelemetry - Prometheus Exporter'
 
 dependencies {
-    api project(':opentelemetry-sdk')
+    api project(':opentelemetry-sdk'),
+            project(':opentelemetry-proto'),
+            libraries.guava, 
+            libraries.prometheus_simpleclient
+    
 
     annotationProcessor libraries.auto_value
 
